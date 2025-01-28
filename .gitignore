@@ -1,3 +1,32 @@
-node_module
+# Node.js modules
+node_modules/
 
-pnpm-lock.yaml
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Dependency directories
+bower_components/
+
+# IDE configurations
+.idea/
+.vscode/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# Build directories
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.swp
+
+# Coverage reports
+coverage/
