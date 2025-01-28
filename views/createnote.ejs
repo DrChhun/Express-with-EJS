@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Note</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    
+    <div class="max-w-[700px] mx-auto pt-32">
+        <h1 class="text-5xl font-bold mb-8">Create New Note</h1>
+
+        <div class="space-y-8">
+            <form action="/create" method="POST" class="space-y-8">
+                <div class="flex flex-col">
+                    <label for="titleInput">Title</label>
+                <input class="border border-1 border-gray-200 px-4 py-2 rounded-lg" type="text" placeholder="Title" id="titleInput" name="title">
+                </div>
+                <div class="flex flex-col">
+                    <label for="contentInput">Content</label>
+                <textarea class="border border-1 border-gray-200 rounded-lg px-4 py-2" name="content" id="contentInput" name="content" cols="30" rows="10"></textarea>
+                </div>
+                <button class="bg-gray-200 px-8 py-3 rounded-full font-semibold cursor-pointer" type="submit">Create</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

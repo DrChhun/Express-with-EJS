@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= note.title %></title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    
+    <div class="max-w-[700px] mx-auto pt-32">
+        <div class="space-y-8">
+            <h1 class="text-5xl font-bold"><%= note.title %></h1>
+            <p><%= note.contents %></p>
+            <a href="/notes">Go Back</a>
+            <div class="flex gap-12 justify-end">
+                <form action="/delete/<%= note.id %>" method="POST">
+                    <button type="submit" class="text-red-500 underline">delete</button>
+                </form>
+                <form action="/create" method="PUT">
+                    <button type="submit" class="text-green-500 underline">update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Notes</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    
+    <div class="max-w-[700px] mx-auto pt-32">
+        <div class="flex justify-between items-center mb-12">
+            <h1 class="text-5xl font-semibold">Notes</h1>
+            <a class="text-blue-500 underline" href="/createNotes">Create New Note</a>
+        </div>
+
+        <div class="mb-12">
+            <form action="/notes" method="GET">
+                <div class="flex gap-4">
+                    <input class="border border-1 border-gray-200 px-4 py-2 w-full rounded-lg" type="text" id="searchTitle" name="search" placeholder="Search By Title or Content">
+                    <button class="bg-gray-300 px-8 py-2 rounded-full cursor-pointer" type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="space-y-8">
+            <% notes.forEach((x, i) => { %>
+                <div class="space-y-2">
+                    <p class="font-semibold text-lg"><%= x.title %></p>
+                    <p><%= x.contents.substring(0, 200) %>... </p>
+                    <p><%= new Date(x.timestamp) %></p>
+                    <a href="/notes/<%= x.id %>" class="text-blue-500 underline">View More</a>
+                </div>
+            <% }) %>
+        </div>
+        
+        <p class="text-center"><%= notes.length > 0 ? '' : 'There is no data available' %></p>
+    </div>
+
+</body>
+</html>
